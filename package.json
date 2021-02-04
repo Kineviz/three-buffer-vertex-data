@@ -1,33 +1,29 @@
 {
-  "name": "three-buffer-vertex-data",
-  "version": "1.1.0",
+  "name": "@kineviz/three-buffer-vertex-data",
+  "version": "1.2.0",
   "description": "an easy way to set vertex data on a BufferGeometry",
   "main": "index.js",
   "license": "MIT",
-  "author": {
-    "name": "Matt DesLauriers",
-    "email": "dave.des@gmail.com",
-    "url": "https://github.com/mattdesl"
-  },
   "dependencies": {
-    "flatten-vertex-data": "^1.0.0"
+    "flatten-vertex-data": "^1.0.2"
   },
   "devDependencies": {
     "baboon-image-uri": "^1.0.1",
     "browserify": "^12.0.1",
-    "budo": "^7.0.0",
+    "budo": "^11.6.4",
     "img": "^1.0.0",
     "primitive-quad": "^1.0.1",
     "primitive-sphere": "^2.0.0",
     "primitive-torus": "^1.0.4",
-    "three": "^0.73.0",
+    "three": "^0.125.2",
     "three-orbit-viewer": "^69.3.1",
     "uglify-js": "^2.6.1"
   },
   "scripts": {
     "test": "node test.js",
     "start": "budo demo/index.js:bundle.js --live",
-    "build": "browserify demo/index.js | uglifyjs -cm > bundle.js"
+    "build": "browserify demo/index.js | uglifyjs -cm > bundle.js",
+    "release": "npm publish  --registry=https://registry.npmjs.org --access=public"
   },
   "standard": {
     "globals": [
@@ -52,10 +48,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/Jam3/three-buffer-vertex-data.git"
+    "url": "git://github.com/kineviz/three-buffer-vertex-data.git"
   },
-  "homepage": "https://github.com/Jam3/three-buffer-vertex-data",
-  "bugs": {
-    "url": "https://github.com/Jam3/three-buffer-vertex-data/issues"
-  }
+  "homepage": "https://github.com/kineviz/three-buffer-vertex-data"
 }
