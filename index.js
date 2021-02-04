@@ -1,13 +1,20 @@
 const flatten = require('flatten-vertex-data')
-
+ 
 module.exports.attr = setAttribute
 module.exports.index = setIndex
 
 function setIndex (geometry, data, itemSize, dtype) {
   if (typeof itemSize !== 'number') itemSize = 1
-  if (typeof dtype !== 'string') dtype = 'uint16' 
-  geometry.index = updateAttribute(geometry.index, data, itemSize, dtype)
- }
+  if (typeof dtype !== 'string') dtype = 'uint16'
+
+  const isR69 = !geometry.index && typeof geometry.setIndex !== 'function'
+  const attrib = isR69 ? geometry.getAttribute('index') : geometry.index
+  const newAttrib = updateAttribute(attrib, data, itemSize, dtype)
+  if (newAttrib) {
+    if (isR69) geometry.addAttribute('index', newAttrib)
+    else geometry.index = newAttrib
+  }
+}
 
 function setAttribute (geometry, key, data, itemSize, dtype) {
   if (typeof itemSize !== 'number') itemSize = 3
