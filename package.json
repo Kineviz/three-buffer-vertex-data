@@ -1,6 +1,6 @@
 {
   "name": "@kineviz/three-buffer-vertex-data",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "an easy way to set vertex data on a BufferGeometry",
   "main": "index.js",
   "license": "MIT",
