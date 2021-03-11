@@ -49,6 +49,7 @@ function updateAttribute (attrib, data, itemSize, dtype) {
     return attrib
   } else {
     // copy data into the existing array
+    flatten(data, attrib.array);
     attrib.needsUpdate = true
     return null
   }
