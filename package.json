@@ -23,7 +23,7 @@
     "test": "node test.js",
     "start": "budo demo/index.js:bundle.js --live",
     "build": "browserify demo/index.js | uglifyjs -cm > bundle.js",
-    "release": "npm publish  --registry=https://registry.npmjs.org --access=public"
+    "release": "npm publish --access=public --scope=@kineviz --registry=https://registry.npmjs.org"
   },
   "standard": {
     "globals": [
